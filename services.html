@@ -4,10 +4,15 @@
 <meta name="description" content="Professional electrical services in South Africa. Installations, repairs, maintenance and emergency support.">
 <meta name="keywords" content="electrician, electrical repairs, electrical installations, Cape Town electrician, electrical maintenance">
 <meta name="author" content="BrightSpark Electrical Services">
+<meta property="og:title" content="BrightSpark Electrical Services">
+<meta property="og:description" content="Professional electrical solutions for homes and businesses">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:type" content="website">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electrical Services in South Africa | BrightSpark</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/logo.png">
 </head>
 
 <body>
@@ -15,6 +20,7 @@
 <button id="menu-btn">☰</button>
 
 <nav id="navbar">
+    <img src="images/logo.png" alt="BrightSpark Logo" class="logo">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="services.html">Services</a>
@@ -29,7 +35,7 @@
 
 <div class="card-grid">
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Electrical Installations</h3>
 
@@ -41,7 +47,7 @@
 
 </div>
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Repairs & Faults</h3>
 
@@ -53,7 +59,7 @@
 
 </div>
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Lighting Solutions</h3>
 
@@ -65,7 +71,7 @@
 
 </div>
 
-<div class="card">
+<div class="card reveal">
 
 <h3>Maintenance</h3>
 
@@ -78,15 +84,35 @@
 </div>
 
 </div>
+<section class="card reveal animation-scene">
+    <div id="stickman">
+  <div id="stickman-arm"></div>
+  <div id="stickman-legs"></div>
+</div>
+  <div id="scene">
 
+    <div id="stickman"></div>
+    <div id="stickman-arm"></div>
+
+    <div id="switch"></div>
+
+    <div id="ladder"></div>
+
+    <div id="bulb-old"></div>
+    <div id="bulb-new"></div>
+
+    <div id="light-glow"></div>
+
+  </div>
+</section>
 </main>
-
+<button id="topBtn">⬆</button>
 <footer>
 
 <p>&copy; 2026 BrightSpark Electrical Services</p>
 
 </footer>
-
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="javascript/script.js"></script>
 </html>
 

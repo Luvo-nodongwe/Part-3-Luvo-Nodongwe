@@ -4,10 +4,15 @@
 <meta name="description" content="Professional electrical services in South Africa. Installations, repairs, maintenance and emergency support.">
 <meta name="keywords" content="electrician, electrical repairs, electrical installations, Cape Town electrician, electrical maintenance">
 <meta name="author" content="BrightSpark Electrical Services">
+<meta property="og:title" content="BrightSpark Electrical Services">
+<meta property="og:description" content="Professional electrical solutions for homes and businesses">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:type" content="website">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electrical Services in South Africa | BrightSpark</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/logo.png">
 </head>
 
 <body>
@@ -15,11 +20,12 @@
 <button id="menu-btn">☰</button>
 
 <nav id="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
-<a href="enquiry.html">Enquiries</a>
+    <img src="images/logo.png" alt="BrightSpark Logo" class="logo">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiries</a>
 </nav>
 
 
@@ -33,11 +39,11 @@
 
 <div class="card-grid">
 
-    <div class="form-container">
+    <div class="form-container reveal">
 
       <h3>Send a Message</h3>
 
-         <form id="form-container">
+         <form id="contact-form">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="from_name" required>
         <label for="email">Email:</label>
@@ -61,7 +67,7 @@
          </form>
     
 </div>
-<div class="card">
+<div class="card reveal">
 
 <h3>Get In Touch</h3>
 
@@ -89,7 +95,7 @@ loading="lazy">
 </div>
 
 </section>
-
+<button id="topBtn">⬆</button>
 </main>
 
 <footer>
@@ -98,5 +104,6 @@ loading="lazy">
 
 </footer>
 <script src="javascript/script.js"></script>
+<script src="javascript/contact.js"></script>
 </body>
 </html>

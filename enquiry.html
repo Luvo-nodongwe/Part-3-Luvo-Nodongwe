@@ -4,10 +4,15 @@
 <meta name="description" content="Professional electrical services in South Africa. Installations, repairs, maintenance and emergency support.">
 <meta name="keywords" content="electrician, electrical repairs, electrical installations, Cape Town electrician, electrical maintenance">
 <meta name="author" content="BrightSpark Electrical Services">
+<meta property="og:title" content="BrightSpark Electrical Services">
+<meta property="og:description" content="Professional electrical solutions for homes and businesses">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:type" content="website">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electrical Services in South Africa | BrightSpark</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/logo.png">
 </head>
 
 <body>
@@ -15,6 +20,7 @@
 <button id="menu-btn">☰</button>
 
 <nav id="navbar">
+    <img src="images/logo.png" alt="BrightSpark Logo" class="logo">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="services.html">Services</a>
@@ -29,13 +35,13 @@
 
 <h2>Request A Quote ⚡</h2>
 
-<div class="form-container">
+<div class="form-container reveal">
 
 <p class="form-intro">
 Fill in your details and we will contact you shortly.
 </p>
 
-<form id="form-container">
+<form id="quote-form">
 
 <label for="name">Full Name:</label>
 
@@ -51,7 +57,7 @@ Fill in your details and we will contact you shortly.
 
 <label for="services">Services Needed:</label>
 
-<select id="services" name="services">
+<select id="services" name="services" required>
 
 <option>Wiring</option>
 <option>Sockets</option>
@@ -67,7 +73,7 @@ Fill in your details and we will contact you shortly.
 
 <br><br><label for="message">Message:</label>
 
-<textarea id="message" name="message" rows="6"></textarea>
+<textarea id="message" name="message" rows="6" required></textarea>
 
 <button type="submit">Submit Enquiry ⚡</button>
 
@@ -76,15 +82,15 @@ Fill in your details and we will contact you shortly.
 </div>
 
 </section>
-
 </main>
-
+<button id="topBtn">⬆</button>
 <footer>
 
 <p>&copy; 2026 BrightSpark Electrical Services | All Rights Reserved</p>
 
 </footer>
 <script src="javascript/script.js"></script>
+<script src="javascript/enquiry.js"></script>
 </body>
 </html>
 

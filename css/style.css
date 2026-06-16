@@ -390,3 +390,169 @@ display:flex;
 }
 
 }
+#topBtn{
+position:absolute;
+bottom:90px;
+right:30px;
+width:60px;
+height:60px;
+padding:0;
+display:none;
+border:none;
+border-radius:50%;
+cursor:pointer;
+font-size:1.5rem;
+font-weight:bold;
+z-index:999;
+
+background:linear-gradient(45deg,#FFD700,#ffea70);
+color:black;
+
+box-shadow:
+0 0 15px rgba(255,215,0,0.6),
+0 0 30px rgba(255,215,0,0.4);
+
+transition:0.3s;
+}
+#topBtn:hover{
+transform:translateY(-5px) scale(1.1);
+box-shadow:
+0 0 20px #FFD700,
+0 0 40px #FFD700;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:all 1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.logo{
+height:60px;
+width:100px;
+margin-right:300px;
+}
+
+.animation-scene {
+  position: relative;
+  height: 500px;   /* important: not full screen */
+  overflow: hidden;
+}
+#scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#switch {
+  position: absolute;
+  right: 40px;
+  bottom: 120px;
+  width: 30px;
+  height: 15px;
+  background: #FFD700;
+  border-radius: 4px;
+}
+#stickman {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  width: 40px;
+  height: 80px;
+}
+
+/* head */
+#stickman::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* body */
+#stickman::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 4px;
+  height: 40px;
+  background: white;
+}
+#stickman-arm {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  width: 25px;
+  height: 4px;
+  background: white;
+  transform-origin: left center;
+}
+#stickman-legs {
+  position: absolute;
+  top: 60px;
+  left: 18px;
+  width: 4px;
+  height: 25px;
+  background: white;
+}
+#ladder {
+  position: absolute;
+  right: 70px;
+  bottom: 60px;
+  width: 40px;
+  opacity: 0;
+}
+#bulb-old,
+#bulb-new {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 30px;
+}
+
+#bulb-new {
+  opacity: 0;
+}
+#light-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,200,0.35), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#stickman {
+  background: white;
+  border-radius: 10px;
+}
+
+#stickman-arm {
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  background: white;
+  left: 40px;
+  bottom: 90px;
+}
+
+#ladder {
+  height: 100px;
+  background: gray;
+  border-radius: 5px;
+}
+
+#bulb-old,
+#bulb-new {
+  background: yellow;
+  border-radius: 50%;
+  height: 20px;
+}
