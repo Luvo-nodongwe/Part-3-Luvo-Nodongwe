@@ -41,7 +41,3 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 reveals.forEach(el => observer.observe(el));
-<<<<<<< HEAD
-=======
-
->>>>>>> dfd50c9 (javascript emailjs incorporation)
