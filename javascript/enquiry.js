@@ -22,3 +22,41 @@ quoteForm.addEventListener("submit", function(e){
     }
 
 });
+
+// Initialize EmailJS
+emailjs.init("UqM0_wcPRShGDTh10");
+
+const quoteForm = document.getElementById("quote-form");
+
+quoteForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const submitBtn = quoteForm.querySelector("button");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    emailjs.send(
+        "service_qpmo6ns",
+        "template_rv88lii",
+        {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            service: document.getElementById("services").value,
+            message: document.getElementById("message").value
+        }
+    )
+    .then(() => {
+        alert("Quote request submitted successfully!");
+        quoteForm.reset();
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Failed to submit quote request.");
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Enquiry ⚡";
+    });
+});
