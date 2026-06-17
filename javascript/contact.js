@@ -1,20 +1,20 @@
 const contactForm = document.getElementById("contact-form");
 
 contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
 
     if(name.length < 3){
         alert("Name must contain at least 3 characters");
-        e.preventDefault();
         return;
     }
 
     if(!email.includes("@")){
         alert("Enter a valid email");
-        e.preventDefault();
+        return;
     }
 
+    // EmailJS call goes here
 });
-
