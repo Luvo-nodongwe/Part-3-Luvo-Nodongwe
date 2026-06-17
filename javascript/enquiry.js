@@ -23,31 +23,3 @@ quoteForm.addEventListener("submit", function(e){
 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    emailjs.init("UqM0_wcPRShGDTh10");
-
-    const form = document.getElementById("quote-form");
-
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        emailjs.send("service_qpmo6ns", "template_rv88lii", {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            service: document.getElementById("services").value,
-            message: document.getElementById("message").value
-        })
-        .then(() => {
-            alert("Sent!");
-            form.reset();
-        })
-        .catch((err) => {
-            console.error(err);
-        });
-    });
-
-});

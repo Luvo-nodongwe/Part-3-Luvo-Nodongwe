@@ -18,30 +18,3 @@ contactForm.addEventListener("submit", function(e){
 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    emailjs.init("UqM0_wcPRShGDTh10");
-
-    const form = document.getElementById("contact-form");
-
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        emailjs.send("service_k6eszjc", "template_61eox1p", {
-            from_name: document.getElementById("name").value,
-            from_email: document.getElementById("email").value,
-            inquiry: document.getElementById("inquiry").value,
-            message: document.getElementById("message").value
-        })
-        .then(() => {
-            alert("Sent!");
-            form.reset();
-        })
-        .catch((err) => {
-            console.error(err);
-        });
-    });
-
-});

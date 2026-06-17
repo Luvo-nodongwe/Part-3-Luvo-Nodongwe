@@ -41,3 +41,47 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 reveals.forEach(el => observer.observe(el));
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+        form_type: "Contact Form",
+        user_name: document.getElementById("contact-name").value,
+        user_email: document.getElementById("contact-email").value,
+        inquiry: document.getElementById("inquiry").value,
+        message: document.getElementById("message").value
+    };
+
+    sendEmail(data);
+});
+
+document.getElementById("quote-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+        form_type: "Quote Request",
+        user_name: document.getElementById("quote-name").value,
+        user_email: document.getElementById("quote-email").value,
+        phone: document.getElementById("quote-phone").value,
+        service: document.getElementById("services").value,
+        message: document.getElementById("message").value
+    };
+
+    sendEmail(data);
+});
+
+function sendEmail(data) {
+
+    emailjs.send("service_k6eszjc", "template_rv88lii", data)
+    .then(() => {
+        return emailjs.send("service_k6eszjc", "template_61eox1p", data);
+    })
+    .then(() => {
+        alert("Message sent successfully!");
+    })
+    .catch((err) => {
+        console.error("EmailJS Error:", err);
+    });
+
+}
