@@ -43,33 +43,50 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 emailjs.init("UqM0_wcPRShGDTh10");
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-    const data = {
-        form_type: "Contact Form",
-        user_name: document.getElementById("contact-name").value,
-        user_email: document.getElementById("contact-email").value,
-        inquiry: document.getElementById("inquiry").value,
-        message: document.getElementById("message").value
-    };
+    emailjs.init("UqM0_wcPRShGDTh10");
 
-    sendEmail(data);
-});
+    const contactForm = document.getElementById("contact-form");
+    const quoteForm = document.getElementById("quote-form");
 
-document.getElementById("quote-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
 
-    const data = {
-        form_type: "Quote Request",
-        user_name: document.getElementById("quote-name").value,
-        user_email: document.getElementById("quote-email").value,
-        phone: document.getElementById("quote-phone").value,
-        service: document.getElementById("services").value,
-        message: document.getElementById("message").value
-    };
+            console.log("Contact form submitted"); // DEBUG
 
-    sendEmail(data);
+            const data = {
+                form_type: "Contact Form",
+                user_name: document.getElementById("contact-name").value,
+                user_email: document.getElementById("contact-email").value,
+                inquiry: document.getElementById("inquiry").value,
+                message: document.getElementById("message").value
+            };
+
+            sendEmail(data);
+        });
+    }
+
+    if (quoteForm) {
+        quoteForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            console.log("Quote form submitted"); // DEBUG
+
+            const data = {
+                form_type: "Quote Request",
+                user_name: document.getElementById("quote-name").value,
+                user_email: document.getElementById("quote-email").value,
+                phone: document.getElementById("quote-phone").value,
+                service: document.getElementById("services").value,
+                message: document.getElementById("message").value
+            };
+
+            sendEmail(data);
+        });
+    }
+
 });
 
 function sendEmail(data) {
