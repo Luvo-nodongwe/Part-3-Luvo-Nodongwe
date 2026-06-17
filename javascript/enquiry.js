@@ -23,40 +23,31 @@ quoteForm.addEventListener("submit", function(e){
 
 });
 
-// Initialize EmailJS
-emailjs.init("UqM0_wcPRShGDTh10");
+document.addEventListener("DOMContentLoaded", function () {
 
-const quoteForm = document.getElementById("quote-form");
+    emailjs.init("UqM0_wcPRShGDTh10");
 
-quoteForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+    const form = document.getElementById("quote-form");
 
-    const submitBtn = quoteForm.querySelector("button");
+    if (!form) return;
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    emailjs.send(
-        "service_qpmo6ns",
-        "template_rv88lii",
-        {
+        emailjs.send("service_qpmo6ns", "template_rv88lii", {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
             phone: document.getElementById("phone").value,
             service: document.getElementById("services").value,
             message: document.getElementById("message").value
-        }
-    )
-    .then(() => {
-        alert("Quote request submitted successfully!");
-        quoteForm.reset();
-    })
-    .catch((error) => {
-        console.error(error);
-        alert("Failed to submit quote request.");
-    })
-    .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Enquiry ⚡";
+        })
+        .then(() => {
+            alert("Sent!");
+            form.reset();
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     });
+
 });

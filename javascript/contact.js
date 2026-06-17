@@ -18,38 +18,30 @@ contactForm.addEventListener("submit", function(e){
 
 });
 
-emailjs.init("UqM0_wcPRShGDTh10");
+document.addEventListener("DOMContentLoaded", function () {
 
-const contactForm = document.getElementById("contact-form");
+    emailjs.init("UqM0_wcPRShGDTh10");
 
-contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+    const form = document.getElementById("contact-form");
 
-    const submitBtn = contactForm.querySelector("button");
+    if (!form) return;
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    emailjs.send(
-        "service_k6eszjc",
-        "template_61eox1p",
-        {
+        emailjs.send("service_k6eszjc", "template_61eox1p", {
             from_name: document.getElementById("name").value,
             from_email: document.getElementById("email").value,
             inquiry: document.getElementById("inquiry").value,
             message: document.getElementById("message").value
-        }
-    )
-    .then(() => {
-        alert("Message sent successfully!");
-        contactForm.reset();
-    })
-    .catch((error) => {
-        console.error(error);
-        alert("Failed to send message.");
-    })
-    .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send Message";
+        })
+        .then(() => {
+            alert("Sent!");
+            form.reset();
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     });
+
 });
