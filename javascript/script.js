@@ -42,6 +42,7 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => observer.observe(el));
 
+emailjs.init("UqM0_wcPRShGDTh10");
 document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
