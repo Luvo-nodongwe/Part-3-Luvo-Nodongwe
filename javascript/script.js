@@ -46,7 +46,7 @@ emailjs.init("UqM0_wcPRShGDTh10");
 document.addEventListener("DOMContentLoaded", function () {
 
     emailjs.init("UqM0_wcPRShGDTh10");
-
+console.log("FORM WORKING");
     const contactForm = document.getElementById("contact-form");
     const quoteForm = document.getElementById("quote-form");
 
