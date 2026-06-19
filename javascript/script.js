@@ -42,7 +42,7 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => observer.observe(el));
 
-emailjs.init("UqM0_wcPRShGDTh10");
+
 document.addEventListener("DOMContentLoaded", function () {
 
     emailjs.init("UqM0_wcPRShGDTh10");
@@ -55,6 +55,30 @@ console.log("FORM WORKING");
             e.preventDefault();
 
             console.log("Contact form submitted"); // DEBUG
+const name = document.getElementById("contact-name").value.trim();
+        const email = document.getElementById("contact-email").value.trim();
+        const inquiry = document.getElementById("inquiry").value.trim();
+const message = document.getElementById("message").value.trim();
+        if(name.length < 3){
+            alert("Name must contain at least 3 characters");
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailPattern.test(email)){
+            alert("Please enter a valid email address");
+            return;
+        }
+        if(inquiry.length < 5){
+            alert("Inquiry must contain at least 5 characters");
+            return;
+        }
+
+        if(message.length < 10){
+            alert("Message must contain at least 10 characters");
+            return;
+        }
 
             const data = {
                 form_type: "Contact Form",
@@ -73,7 +97,35 @@ console.log("FORM WORKING");
             e.preventDefault();
 
             console.log("Quote form submitted"); // DEBUG
+const name = document.getElementById("quote-name").value.trim();
+    const email = document.getElementById("quote-email").value.trim();
+    const phone = document.getElementById("quote-phone").value.trim();
+    const service = document.getElementById("services").value.trim();
+    const message = document.getElementById("message").value.trim();
 
+    if(name.length < 3){
+        alert("Name must contain at least 3 characters");
+        return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)){
+        alert("Please enter a valid email address");
+        return;
+    }
+    if(phone.length < 10){
+        alert("Phone number must contain at least 10 digits");
+        return;
+    }
+    if(service.length < 5){
+        alert("Please select a service");
+        return;
+    }
+    if(message.length < 10){
+        alert("Message must contain at least 10 characters");
+        return;
+    }
             const data = {
                 form_type: "Quote Request",
                 user_name: document.getElementById("quote-name").value,
@@ -92,14 +144,14 @@ console.log("FORM WORKING");
 function sendEmail(data) {
 
     emailjs.send("service_k6eszjc", "template_rv88lii", data)
-    .then(() => {
-        return emailjs.send("service_k6eszjc", "template_61eox1p", data);
-    })
+   
     .then(() => {
         alert("Message sent successfully!");
+        form.reset();
     })
     .catch((err) => {
         console.error("EmailJS Error:", err);
     });
 
 }
+

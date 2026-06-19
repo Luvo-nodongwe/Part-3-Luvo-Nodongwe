@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luvo-nodongwe.github.io/Part-3-Luvo-Nodongwe/sitemap.xml
